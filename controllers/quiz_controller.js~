@@ -4,14 +4,28 @@ exports.author = function(req, res){
 }
 
 //GEt /quizes/question
+<<<<<<< HEAD
 exports.question = function(req, res){
 	res.render('quizes/question', {pregunta: 'Capital de Italia'});
 };
 //GEt /quizes/answer
 exports.answer = function (req, res){
 	if (req.query.respuesta ==='Roma'){
+=======
+exports.question = function(req,res) {
+	res.render('quizes/question', {pregunta: 'Capital de Italia'});
+};
+
+//GEt /quizes/answer
+exports.answer = function(req,res) {
+	if (req.query.respuesta === 'Roma'){
+>>>>>>> creditos
 		res.render('quizes/answer', {respuesta: 'Correcto'});
 	} else {
 		res.render('quizes/answer', {respuesta: 'Incorrecto'});
 	}
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> creditos

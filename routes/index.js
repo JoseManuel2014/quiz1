@@ -4,17 +4,17 @@ var router = express.Router();
 var quizController = require('../controllers/quiz_controller');
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Quiz1' });
+  res.render('index', { title: 'Quiz' });
 });
 
 router.get('/quizes/question', quizController.question);
 router.get('/quizes/answer', quizController.answer);
 
-<<<<<<< HEAD
+
 router.get('/author', quizController.author);
 
 module.exports = router;
-=======
+
 /*
 Modifique el router (routers/index.js) para que atienda las peticiones "GET /author" 
 y sirva una nueva vista views/author.ejs con los datos de los autores o autor de la página, 
@@ -28,4 +28,8 @@ router.get('/autor', function(req, res) {
 //render('/autor', /views/author.ejs);
 
 module.exports = router;
->>>>>>> 5f07abcf86707bce3b19d5639de1da362a849f41
+
+router.get('/author', quizController.author);
+
+module.exports = router;
+
