@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var models = require('../models/models.js') 
 
 //Autoload - factoriza el código si ruta incluye :quizId
@@ -11,12 +12,16 @@ exports.load = function(req, res, next, quizId) {
 		}
 		).catch(function(error) { next(error);});
 };
+=======
+var models = require('../models/models.js')
+>>>>>>> ea6653a927e2d9e04b3f83f8f931a9112c8fa3b1
 
 //GET /author
 exports.author = function(req, res){
 	res.render('author', {autor: 'José Manuel Barrios'})
 }
 
+<<<<<<< HEAD
 //GET /quizes
 exports.index = function(req,res) {
 	models.Quiz.findAll().then(function(quizes) {
@@ -27,6 +32,13 @@ exports.index = function(req,res) {
 //GEt /quizes/:Id
 exports.show = function(req,res) {
 	res.render('quizes/show', { quiz: req.quiz});
+=======
+//GEt /quizes/question
+exports.question = function(req,res) {
+	models.Quiz.findAll().then(function(quiz) {
+		res.render('quizes/question', {pregunta: quiz[0].pregunta});
+	})
+>>>>>>> ea6653a927e2d9e04b3f83f8f931a9112c8fa3b1
 };
 
 //GEt /quizes/:Id/answer
