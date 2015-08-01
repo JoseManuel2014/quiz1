@@ -1,4 +1,4 @@
-var models = require('../models/models.js') 
+var models = require('../models/models.js')
 
 //Autoload - factoriza el código si ruta incluye :quizId
 exports.load = function(req, res, next, quizId) {
@@ -11,6 +11,7 @@ exports.load = function(req, res, next, quizId) {
 		}
 		).catch(function(error) { next(error);});
 };
+var models = require('../models/models.js')
 
 //GET /author
 exports.author = function(req, res){
@@ -27,6 +28,11 @@ exports.index = function(req,res) {
 //GEt /quizes/:Id
 exports.show = function(req,res) {
 	res.render('quizes/show', { quiz: req.quiz});
+//GEt /quizes/question
+exports.question = function(req,res) {
+	models.Quiz.findAll().then(function(quiz) {
+		res.render('quizes/question', {pregunta: quiz[0].pregunta});
+	})
 };
 
 //GEt /quizes/:Id/answer
